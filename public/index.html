@@ -1,55 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vite + Firebase Hosting</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pacer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Firebase Scripts -->
-    <script defer src="/__/firebase/10.14.1/firebase-app-compat.js"></script>
-    <script defer src="/__/firebase/10.14.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.14.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <!-- Vite Application Scripts -->
-    <script type="module" crossorigin src="/assets/index-DfQ3Eo-l.js"></script>
+    <script type="module" crossorigin src="/assets/index-H8-u-cLk.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-DiwrgTda.css">
-
-    <!-- Custom Styles (optional) -->
-    <style>
-      body {
-        background: #ECEFF1;
-        color: rgba(0, 0, 0, 0.87);
-        font-family: Roboto, Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      #root {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-    </style>
   </head>
   <body>
-    <!-- Vite App Root Element -->
     <div id="root"></div>
-
-    <!-- Firebase Loading Message -->
-    <p id="load">Firebase SDK Loading…</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        try {
-          let app = firebase.app();
-          loadEl.textContent = 'Firebase SDK loaded successfully!';
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading Firebase SDK, check the console.';
-        }
-      });
-    </script>
   </body>
 </html>

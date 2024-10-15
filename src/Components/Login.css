@@ -1,0 +1,58 @@
+/* src/Login.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+  }
+  
+  h2 {
+    font-size: 2.5rem; /* Increased size for better visibility */
+    margin-bottom: 20px;
+    font-weight: 600; /* Bold weight for a modern touch */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 10px 0;
+  }
+  
+  input {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif; /* Consistent font in inputs */
+  }
+  
+  button {
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffa100;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif; /* Consistent font in buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #e59400;
+  }
+  
+  .error {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+    font-weight: 500; /* Slightly bolder for emphasis */
+  }
+  
