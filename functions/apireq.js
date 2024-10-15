@@ -10,7 +10,7 @@ exports.getCarListings = functions.https.onRequest((req, res) => {
     try {
       const response = await axios.get('https://auto.dev/api/v1/listings', {
         headers: {
-          Authorization: 'Bearer YOUR_API_KEY', // Replace with your actual API key
+          Authorization: 'Bearer ZrQEPSkKa25peG9uNTI4QGdtYWlsLmNvbQ==', // Replace with your actual API key
         },
       });
       res.status(200).send(response.data);
