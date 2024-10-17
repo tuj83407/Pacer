@@ -93,26 +93,35 @@ const PhaserGame = () => {
             const startY = 50; // Y position for headers
         
             headers.forEach((header, index) => {
-                // Create the header text object
+                // Create a text object, not an image
                 const headerText = scene.add.text(startX + index * 150, startY, header.name, {
                     font: '20px Arial',
                     fill: '#ffffff',
                     backgroundColor: '#000000',
                 }).setInteractive();
         
-                // Store content directly as a property for easy access later
+                // Assign customName correctly
+                headerText.customName = header.name;
+        
+                // Log the custom name to verify
+                console.log('Created header:', headerText.customName);
+        
+                // Assign the content to the headerText object
                 headerText.content = header.content;
         
-                // Add a custom name property
-                headerText.customName = header.name; // Assign the custom name here
+                // Add header to the physics group
+                resumeSections.add(headerText);
         
-                resumeSections.add(headerText); // Add header to the physics group
-        
+                // Set up overlap for collision detection
                 scene.physics.add.overlap(bullets, headerText, (bullet, header) => {
-                    hitResumeSection(bullet, header);
+                    console.log('Overlap detected with:', header); // Log header object
+                    hitResumeSection(bullet, header); // Pass the header object
                 });
             });
         }
+        
+        
+        
         
 
 
@@ -136,15 +145,20 @@ const PhaserGame = () => {
         }
 
         function hitResumeSection(bullet, headerText) {
-            console.log('Is headerText a text object?', headerText instanceof Phaser.GameObjects.Text);
             bullet.setActive(false); // Hide bullet after hit
             bullet.setVisible(false);
-            console.log('Bullet hit header:', headerText);
+        
+            // Log the type of headerText to confirm it's the right object
+            console.log('Header Text Object:', headerText);
+            
+            // Access the custom name here
+            console.log('Bullet hit header:', headerText.customName); // This should log the correct name
+        
             // Remove the header after hit
             headerText.setActive(false);
             headerText.setVisible(false);
             resumeSections.remove(headerText); // Remove from the physics group
-
+        
             // Check if content is defined before scattering
             if (headerText.content) {
                 scatterDetails(this, headerText.x, headerText.content);
@@ -152,6 +166,9 @@ const PhaserGame = () => {
                 console.error('Content is undefined for header:', headerText.text);
             }
         }
+        
+        
+        
 
         function scatterDetails(scene, headerX, content) {
             const details = content.split('\n'); // Split content into lines
